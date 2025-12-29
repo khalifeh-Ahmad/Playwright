@@ -1,6 +1,6 @@
 name: Morning Pipeline for Playwright Tests
 on:
-  scheduale:
+  schedule:
     - cron: '0 3 29 12 *'
   push:
     branches:
