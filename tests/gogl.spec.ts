@@ -1,0 +1,8 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://www.google.com/');
+  await page.getByRole('combobox', { name: 'Search' }).click();
+  await page.getByRole('combobox', { name: 'Search' }).fill('learn German');
+  await page.goto('https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dlearn%2BGerman%26sca_esv%3Dc54719d661e4c3a9%26source%3Dhp%26ei%3D0PxJaZHLHtG-juMP-siu-QU%26iflsig%3DAOw8s4IAAAAAaUoK4Jrr80pp9hHKWz5xwWAE1LzQ-YGO%26ved%3D0ahUKEwiR85Gv09KRAxVRn2MGHXqkK18Q4dUDCBQ%26uact%3D5%26oq%3Dlearn%2BGerman%26gs_lp%3DEgdnd3Mtd2l6IgxsZWFybiBHZXJtYW4yBRAAGIAEMgUQABiABDIFEAAYgAQyCxAuGIAEGMcBGK8BMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAESI9hULktWKVecAN4AJABAJgBaqAB7gaqAQQxMy4xuAEDyAEA-AEBmAIRoAKhB6gCCsICChAAGAMY6gIYjwHCAgoQLhgDGOoCGI8BwgIREC4YgAQYsQMY0QMYgwEYxwHCAgsQABiABBixAxiDAcICCBAuGIAEGLEDwgIOEAAYgAQYsQMYgwEYigXCAhQQLhiABBixAxiDARjHARiKBRivAcICCxAuGIAEGNEDGMcBwgIOEC4YgAQYsQMY0QMYxwHCAg4QLhiABBixAxiDARiKBcICERAuGIAEGLEDGIMBGMcBGK8BwgIUEC4YgAQYsQMYxwEYigUYjQYYrwHCAgsQABiABBixAxiKBcICCBAAGIAEGLEDwgILEC4YgAQYsQMYgwHCAgkQABiABBgKGAvCAg8QLhiABBjHARgKGAsYrwGYAwTxBQtc3LUI-wwqkgcEMTYuMaAHmZIBsgcEMTMuMbgHlwfCBwYwLjE1LjLIByKACAA%26sclient%3Dgws-wiz%26sei%3D4PxJaajlCfyt4-EPxNz2sAU&q=EhAgAQ0IAOKNIgR6FKNGJLPRGOD5p8oGIjAf4QPX7ln1RciqULlEw-FoDCNmYt3lGYTHe14CXrMOeX7O7rQsaxQ49tUuGlrnc-IyAVJaAUM');
+});
