@@ -22,9 +22,18 @@ jobs:
         run: npx playwright install firefox --with-deps
       - name: Run Playwright tests
         run: npm run test
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       - name: Upload allure Report
         uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
           path: allure-report/
           retention-days: 30
+
+      - name: ZAP Scan
+        uses: zaproxy/action-full-scan@v0.13.0
+        with:
+          target: 'https://the-internet.herokuapp.com/'
