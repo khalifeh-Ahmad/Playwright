@@ -6,7 +6,7 @@ test("getApi", async ({ request }) => {
 
   const res = await request.get(baseUrl);
   let resBody = await res.json();
-  let resHeader = await res.headers();
+  let resHeader =  res.headers();
   //console.log(resBody);
   //console.log(resHeader);
 
